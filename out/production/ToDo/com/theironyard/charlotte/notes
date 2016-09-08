@@ -1,0 +1,121 @@
+package com.theironyard.charlotte;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * Created by meekinsworks on 8/8/16.
+ */
+
+// we can write a program that constantly loops and
+// provides an option to add, toggle, and list the to-do items.
+public class TodoItem {
+    public String text;
+    public boolean isDone;
+    //declares fields
+
+    public ToDoItem(String text, boolean isDone) {
+        this.text = text;
+        this.isDone = isDone;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
+
+}
+public class ToDo {
+    public static void main(String[] args) {
+        ArrayList<Main.TodoItem> items = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);// read in input and scan it in
+
+        while (true) {// will have to break out of loop at some point
+            System.out.println("1. Create to-do item");// adding statements
+            System.out.println("2. Toggle to-do item");
+            System.out.println("3. List to-do items");
+            // this is an endless list oftodo statmeents at point
+
+            String option = scanner.nextLine();
+//
+            if (option.equals("1")) {
+                //prompts user for atodo text -
+                // in intellij you can add atodo
+                //you can scan and runatodo
+                // read in text for tex
+                // add a new to do object forour array list
+
+            }
+            System.out.println("Enter your to-do item:");
+
+            String text = scanner.nextLine();
+            items.add(new TodoItem(text, false));
+            // add to construcor list, another consturctor that only takes in text that automatially sets text
+
+            ToDoItem item = new ToDoItem(text, false);
+            items.add(item);
+
+           // another way to do this
+            // TodoItem a = new TodoItem(text, false);
+            //items.add(a);
+
+
+            }
+        }
+            else if (option.equals("2")) {
+            System.out.println("Enter the number of the item you want to toggle:");
+        //prompt user for to do number to toggle
+        //read in a number that indicates a to do index
+        //change the isDone property on that dodo to whatever
+        //it currently is not
+            int idx  = Integer.valueOf(scanner.nextLine());
+        //items is the array list.to do is arranged there. get the items from get method.
+        //change the isdone property on that to do to whatever it currently is not
+            ToDoItem currentTodo = items.get(idk);
+            currentTodo.setDone(!currentTodo.isDone();
+
+        } else if (option.equals("3")) {
+            System.out.println("Listing To do Items");
+    }
+            // for each to do item
+                //print its index its completion value and its text
+        //eg 1. [] fold the laundry
+        //2.. [x] bathe the dog
+        // need a for loop
+            String checkbox = "[]";
+            String finishedCheckBox = "[x]";
+        //set reference points for our finished items
+           for (int i = 0; i<items.size();i++){
+               System.out.printf("%d,%s %s\n", i,);
+               i,
+               currentItem.isDone() ? finished Checkbox : checkBox, // if finished, check box, if not finished, no check
+               currentItem.getText());// prints text of current todo
+           }  else {
+            System.out.println("Please try again");
+    }
+
+    }
+
+
+// string category
+//string text
+//boolean is done
+//date due
+//
+//    public ToDoItem(String text, boolean isDone) {
+//        this.text = text;
+//        this.isDone = isDone;
+//
+//    }
+//}-- this is a constructor!
+
