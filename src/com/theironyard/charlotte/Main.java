@@ -1,13 +1,23 @@
 package com.theironyard.charlotte;
 
+
+import org.h2.tools.Server;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     //checking git
 
-    public static void main(String[] args) {
-        // write your code here
+    public static void main(String[] args) throws SQLException {
+        Server.createWebServer().start();
+        Connection conn = DriverManager.getConnection("jdbc:h2:./main");
+        Statement stmt = conn.createStatement();
+        stmt.execute("CREATE TABLE IF NOT EXISTS todos (id IDENTITY, text VARCHAR, is_done BOOLEAN)");
 
         ArrayList<ToDoItem> items = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);// read in input and scan it in
